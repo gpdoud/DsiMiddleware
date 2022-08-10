@@ -14,4 +14,4 @@ app.MapGet("/test", (HttpRequest request) => {
     return Results.Ok("Test successful!");
 });
 
-app.Run();
+app.Run("http://localhost:3000");

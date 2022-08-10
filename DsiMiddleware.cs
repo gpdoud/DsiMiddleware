@@ -19,6 +19,8 @@ namespace DsiMiddleware {
                 await _next(http);
             } else {
                 http.Response.StatusCode = 400;
+                var resp400 = new { ErrorCode = 400, Message = "Bad Request" };
+                _ = http.Response.WriteAsJsonAsync(resp400);
             }
         }
     }
